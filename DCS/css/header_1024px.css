@@ -1,0 +1,93 @@
+html{
+	font-size: 62.5%;
+}
+
+img {
+	height: 116px;
+	margin: 10px;
+	width: auto;
+}
+
+.rightContent {
+	float: right;
+}
+
+.timeCountDown {
+	margin-top: 15px;
+	float: right;
+	display: grid;
+	grid-template-columns: 70px 70px;
+	grid-template-rows: 70px;
+	border: 1px dashed #E9608D;
+	font-size: 1.6rem;
+}
+
+.text {
+	background-color: #e9608d;
+	color: #FFFFFF;
+	text-align: center;
+	padding-top: 13px;
+}
+
+.num {
+	color: #E9608D;
+	font-size: 52px;
+	text-align: center;
+}
+
+.menu {
+	height: 50px;
+	line-height: 35px;
+	clear: both;
+}
+
+ul {
+	list-style: none;
+	display: inline;
+	width: 300px;
+	height: 50px;
+}
+
+ul li {
+	float: left;
+	margin: 10px;
+	width: 80px;
+	height: 50px;
+	text-align: center;
+}
+
+ul li a {
+	text-decoration: none;
+	font-size: 1.6rem;
+	color: #656464;
+	display: block;
+	vertical-align: middle;
+	line-height: 50px;
+	width: 80px;
+	height: 50px;
+}
+
+ul li a:hover {
+	background-color: #E9608D;
+	color: white;
+}
+
+.menu img {
+	display: inline;
+	width: 30px;
+	height: 35px;
+	margin-top: 10px;
+}
+
+.menu p {
+	display: inline;
+	padding: 10px 10px;
+}
+
+hr {
+	display: inline-block;
+	width: 1px;
+	height: 40px;
+	background-color: #656464;
+	margin-top: 15px;
+}

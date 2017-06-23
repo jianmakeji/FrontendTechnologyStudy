@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/umeditor/themes/default/_css/umeditor.css"/>
+		<style type="text/css">
+			#container{
+				width: 1024px;
+				height: 500px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 加载编辑器的容器 -->
+	<script id="container" name="content" type="text/plain">这里写你的初始化内容</script>
+	
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	<script type="text/javascript" src="js/umeditor/template.min.js" ></script>
+	<!-- 配置文件 -->
+	<script type="text/javascript" src="js/umeditor/umeditor.config.js"></script>
+	
+	<!-- 编辑器源码文件 -->
+	<script type="text/javascript" src="js/umeditor/umeditor.js"></script>
+	
+	
+	<script type="text/javascript" src="js/umeditor/lang/zh-cn/zh-cn.js"></script>
+	
+	<!-- 实例化编辑器 -->
+	<script type="text/javascript">
+	    var ue = UM.getEditor('container', {
+            lang:/^zh/.test(navigator.language || navigator.browserLanguage || navigator.userLanguage) ? 'zh-cn' : 'en',
+            langPath:UMEDITOR_CONFIG.UMEDITOR_HOME_URL + "lang/",
+            focus: true
+        });
+	    
+	</script>
+</html>

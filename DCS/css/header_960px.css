@@ -1,0 +1,32 @@
+html{
+	font-size: 62.5%;
+}
+
+.timeCountDown {
+	margin-top: 15px;
+	float: right;
+	display: grid;
+	grid-template-columns: 70px 70px;
+	grid-template-rows: 70px;
+	border: 1px dashed #E9608D;
+	font-size: 1.6rem;
+}
+
+.text {
+	background-color: #e9608d;
+	color: #FFFFFF;
+	text-align: center;
+	padding-top: 13px;
+}
+
+.num {
+	color: #E9608D;
+	font-size: 52px;
+	text-align: center;
+}
+
+img {
+	height: 96px;
+	margin: 10px;
+	width: auto;
+}
