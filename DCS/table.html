@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/materialize/materialize.css" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<style type="text/css">
+			body {
+				width: 80%;
+				height: auto;
+				margin: 0 auto;
+			}
+			
+			.pageBlock {
+				float: right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<table id="dataTable" class="striped centered">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Item Name</th>
+					<th>Item Price</th>
+					<th>Operation</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="value in datas">
+					<td>{{value.name}}</td>
+					<td>{{value.item}}</td>
+					<td>{{value.price}}</td>
+					<td>修改 删除</td>
+				</tr>
+			</tbody>
+		</table>
+		<ul class="pagination pageBlock">
+			<li class="disabled">
+				<a href="#!"><i class="material-icons">chevron_left</i></a>
+			</li>
+			<li class="active">
+				<a href="#!">1</a>
+			</li>
+			<li class="waves-effect">
+				<a href="#!">2</a>
+			</li>
+			<li class="waves-effect">
+				<a href="#!">3</a>
+			</li>
+			<li class="waves-effect">
+				<a href="#!">4</a>
+			</li>
+			<li class="waves-effect">
+				<a href="#!">5</a>
+			</li>
+			<li class="waves-effect">
+				<a href="#!"><i class="material-icons">chevron_right</i></a>
+			</li>
+		</ul>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/materialize/materialize.min.js"></script>
+	<script type="text/javascript" src="js/underscore.js"></script>
+	<script type="text/javascript" src="js/vue/vue.js"></script>
+	<script type="text/javascript">
+		var vum = new Vue({
+			el: '#dataTable',
+			data: {
+				datas: "",
+				pageNum:"",
+			},
+			methods: {
+				showData: function() {
+					$.getJSON("table.json", function(data) {
+						vum.datas = data;
+					});
+				}
+			}
+		});
+
+		(function() {
+			var currentPage = 0;
+			
+			$.getJSON("table.json", function(data) {
+				var pageNum = data.length / 10;
+				if (data.length % 10 != 0){
+					pageNum = pageNum + 1;
+				}
+				vum.datas = data.slice(currentPage*10, currentPage*10 + 10);
+				vum.pageNum = pageNum;
+			});
+		})();
+	</script>
+
+</html>
